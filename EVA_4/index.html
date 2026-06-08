@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividad Usuarios</title>
+  <meta name="author" content="Katherine Miranda" />
+</head>
+<body>
+
+  <h1>Usuarios</h1>
+
+  <button onclick="admin.listarNombres()">Listar nombres</button>
+  <button onclick="admin.infoBasica()">Información básica</button>
+  <button onclick="admin.direccion()">Dirección</button>
+  <button onclick="admin.infoAvanzada()">Información avanzada</button>
+  <button onclick="admin.companias()">Compañías</button>
+  <button onclick="admin.nombresOrdenados()">Nombres ordenados</button>
+
+  <script>
+    class Usuarios {
+      constructor() {
+        this.datos = [];
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.open("GET", "https://jsonplaceholder.typicode.com/users");
+
+        xhr.onload = () => {
+          this.datos = JSON.parse(xhr.responseText);
+          console.log("Datos cargados");
+        };
+
+        xhr.send();
+      }
+
+      buscarUsuario() {
+        let nombre = prompt("Escribe el nombre del usuario");
+
+        let usuario = this.datos.find(function(user) {
+          return user.name.toLowerCase() == nombre.toLowerCase();
+        });
+
+        return usuario;
+      }
+
+      listarNombres() {
+        for (let user of this.datos) {
+          console.log(user.name);
+        }
+      }
+
+      infoBasica() {
+        let usuario = this.buscarUsuario();
+
+        console.log("Username: " + usuario.username);
+        console.log("Correo: " + usuario.email);
+      }
+
+      direccion() {
+        let usuario = this.buscarUsuario();
+
+        console.log("Street: " + usuario.address.street);
+        console.log("Suite: " + usuario.address.suite);
+        console.log("City: " + usuario.address.city);
+        console.log("Zipcode: " + usuario.address.zipcode);
+        console.log("Lat: " + usuario.address.geo.lat);
+        console.log("Lng: " + usuario.address.geo.lng);
+      }
+
+      infoAvanzada() {
+        let usuario = this.buscarUsuario();
+
+        console.log("Telefono: " + usuario.phone);
+        console.log("Sitio web: " + usuario.website);
+        console.log("Compañia: " + usuario.company.name);
+        console.log("Frase: " + usuario.company.catchPhrase);
+        console.log("BS: " + usuario.company.bs);
+      }
+
+      companias() {
+        for (let user of this.datos) {
+          console.log(user.company.name + " - " + user.company.catchPhrase);
+        }
+      }
+
+      nombresOrdenados() {
+        let nombres = [];
+
+        for (let user of this.datos) {
+          nombres.push(user.name);
+        }
+
+        nombres.sort();
+
+        for (let nombre of nombres) {
+          console.log(nombre);
+        }
+      }
+    }
+
+    let admin = new Usuarios();
+  </script>
+
+</body>
+</html>
