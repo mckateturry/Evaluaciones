@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>BancoEstado Clientes</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <h1>BancoEstado</h1>
+      <p>Administrador de clientes, Cuenta RUT y cuentas de ahorro.</p>
+    </section>
+
+    <section class="buttons">
+      <button onclick="listarClientes()">Listar todos los clientes</button>
+      <button onclick="listarClientesCuentaRut()">Clientes con Cuenta RUT</button>
+    </section>
+
+    <section id="resultado" class="grid"></section>
+
+    <section class="forms">
+      <form id="formNuevoCliente">
+        <h2>Agregar cliente nuevo</h2>
+
+        <input type="text" id="nombre" placeholder="Nombre cliente" required>
+        <input type="text" id="rut" placeholder="RUT cliente" required>
+
+        <select id="tipoCuenta">
+          <option value="rut">Cuenta RUT</option>
+          <option value="ahorro">Cuenta de AHORRO</option>
+        </select>
+
+        <input type="text" id="numeroCuenta" placeholder="Número cuenta" required>
+        <input type="number" id="saldo" placeholder="Saldo inicial" required>
+
+        <button type="submit">Agregar cliente</button>
+      </form>
+
+      <form id="formCuentaRut">
+        <h2>Agregar Cuenta RUT</h2>
+
+        <input type="text" id="rutCuentaRut" placeholder="RUT cliente existente" required>
+        <input type="text" id="numeroCuentaRut" placeholder="Número Cuenta RUT" required>
+        <input type="number" id="saldoCuentaRut" placeholder="Saldo" required>
+
+        <button type="submit">Agregar Cuenta RUT</button>
+      </form>
+
+      <form id="formCuentaAhorro">
+        <h2>Agregar Cuenta AHORRO</h2>
+
+        <input type="text" id="rutCuentaAhorro" placeholder="RUT cliente existente" required>
+        <input type="text" id="numeroCuentaAhorro" placeholder="Número Cuenta AHORRO" required>
+        <input type="number" id="saldoCuentaAhorro" placeholder="Saldo" required>
+
+        <button type="submit">Agregar Cuenta AHORRO</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
