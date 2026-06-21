@@ -1,0 +1,20 @@
+<section>
+  <h2>{{mayusculas tienda}}</h2>
+  <p>{{mensaje}}</p>
+
+  <div class="productos">
+    {{#each productos}}
+      <div class="card">
+        <img src="{{imagen}}" alt="{{nombre}}">
+        <h3>{{nombre}}</h3>
+        <p>Precio: ${{precio}}</p>
+
+        {{#if disponible}}
+          <p class="stock">En stock</p>
+        {{else}}
+          <p class="agotado">Agotado</p>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+</section>
