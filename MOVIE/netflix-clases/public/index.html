@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo Netflix</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">API REST + Node.js</p>
+      <h1>Catálogo Netflix</h1>
+      <p>Películas y series almacenadas en archivos locales.</p>
+    </section>
+
+    <section class="actions">
+      <button onclick="listarPeliculas()">LISTA DE PELÍCULAS</button>
+      <button onclick="listarSeries()">LISTA DE SERIES</button>
+    </section>
+
+    <section class="panel">
+      <label for="orden">Ordenar por</label>
+      <select id="orden" onchange="ordenarLista()">
+        <option value="nombre">Nombre</option>
+        <option value="anio">Año</option>
+        <option value="director">Director</option>
+        <option value="temporadas">Temporadas</option>
+      </select>
+    </section>
+
+    <section id="resultado" class="grid"></section>
+
+    <section class="forms">
+      <form id="formPelicula">
+        <h2>Agregar película</h2>
+
+        <input type="text" id="peliculaNombre" placeholder="Nombre" required>
+        <input type="text" id="peliculaDirector" placeholder="Director" required>
+        <input type="number" id="peliculaAnio" placeholder="Año" required>
+
+        <button type="submit">AGREGAR NUEVA PELÍCULA</button>
+      </form>
+
+      <form id="formSerie">
+        <h2>Agregar serie</h2>
+
+        <input type="text" id="serieNombre" placeholder="Nombre" required>
+        <input type="number" id="serieAnio" placeholder="Año estreno" required>
+        <input type="number" id="serieTemporadas" placeholder="Número de temporadas" required>
+
+        <button type="submit">AGREGAR NUEVA SERIE</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
