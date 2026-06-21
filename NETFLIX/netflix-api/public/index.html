@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Catálogo Netflix</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <h1>Catálogo Netflix</h1>
+
+  <button onclick="listarPeliculas()">LISTA DE PELÍCULAS</button>
+  <button onclick="listarSeries()">LISTA DE SERIES</button>
+
+  <h2>Ordenar</h2>
+
+  <select id="orden" onchange="ordenarLista()">
+    <option value="nombre">Nombre</option>
+    <option value="anio">Año</option>
+    <option value="director">Director</option>
+    <option value="temporadas">Temporadas</option>
+  </select>
+
+  <div id="resultado"></div>
+
+  <hr>
+
+  <h2>Agregar nueva película</h2>
+
+  <form id="formPelicula">
+    <input type="text" id="peliculaNombre" placeholder="Nombre" required>
+    <input type="text" id="peliculaDirector" placeholder="Director" required>
+    <input type="number" id="peliculaAnio" placeholder="Año" required>
+    <button type="submit">AGREGAR NUEVA PELÍCULA</button>
+  </form>
+
+  <h2>Agregar nueva serie</h2>
+
+  <form id="formSerie">
+    <input type="text" id="serieNombre" placeholder="Nombre" required>
+    <input type="number" id="serieAnio" placeholder="Año estreno" required>
+    <input type="number" id="serieTemporadas" placeholder="Número temporadas" required>
+    <button type="submit">AGREGAR NUEVA SERIE</button>
+  </form>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

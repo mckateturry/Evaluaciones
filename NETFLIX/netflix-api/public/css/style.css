@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at top, #1b1b1b, #050505);
+  color: white;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  color: #ffcc00;
+  text-shadow: 4px 4px 0 #0057b8;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #ffcc00;
+  border-left: 6px solid #0057b8;
+  padding-left: 12px;
+}
+
+button {
+  background: linear-gradient(135deg, #0057b8, #003f88);
+  color: #ffcc00;
+  border: 3px solid #ffcc00;
+  padding: 12px 18px;
+  margin: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 6px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 0 #001f45;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 #001f45;
+  background: linear-gradient(135deg, #0072e8, #0057b8);
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #001f45;
+}
+
+select,
+input {
+  display: block;
+  width: 280px;
+  padding: 12px;
+  margin: 10px 0;
+  border: 3px solid #0057b8;
+  border-radius: 6px;
+  outline: none;
+  font-size: 15px;
+}
+
+select:focus,
+input:focus {
+  border-color: #ffcc00;
+  box-shadow: 0 0 10px #ffcc00;
+}
+
+form {
+  background: #111;
+  border: 3px solid #0057b8;
+  padding: 20px;
+  max-width: 340px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 8px 8px 0 #ffcc00;
+}
+
+#resultado {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: linear-gradient(180deg, #222, #111);
+  border: 3px solid #ffcc00;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 #0057b8;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h3 {
+  color: #ffcc00;
+  font-size: 22px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+hr {
+  border: none;
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ffcc00,
+    #ffcc00 20px,
+    #0057b8 20px,
+    #0057b8 40px
+  );
+  margin: 35px 0;
+}
