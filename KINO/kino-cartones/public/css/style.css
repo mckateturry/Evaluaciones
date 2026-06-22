@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+.container {
+  width: min(1000px, 92%);
+  margin: auto;
+  padding: 40px 0;
+}
+
+.hero {
+  background: white;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 28px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: clamp(32px, 6vw, 56px);
+  color: #2563eb;
+}
+
+p {
+  color: #6b7280;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.menu a,
+button,
+.volver {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+button {
+  margin-bottom: 24px;
+}
+
+.menu a:hover,
+button:hover,
+.volver:hover {
+  background: #1d4ed8;
+}
+
+.volver {
+  background: #111827;
+  margin-bottom: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.carton {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.carton h2 {
+  font-size: 18px;
+  margin-top: 0;
+  color: #111827;
+}
+
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #111827;
+}
+
+.numeros span {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #111827;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .menu {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 28px;
+  }
+
+  button,
+  .volver {
+    width: 100%;
+  }
+}
