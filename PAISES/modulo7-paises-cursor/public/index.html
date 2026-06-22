@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Países - Módulo 7</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <span>Node + pg + pg-cursor</span>
+      <h1>Administrador de países</h1>
+      <p>Consulta por bloques, inserción y eliminación con transacciones.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Listado de países</h2>
+
+      <div class="actions">
+        <select id="cantidad">
+          <option value="5">Ver 5 registros</option>
+          <option value="10">Ver 10 registros</option>
+          <option value="20">Ver 20 registros</option>
+        </select>
+
+        <button onclick="listarPaises()">Siguiente</button>
+      </div>
+
+      <div id="mensaje"></div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>País</th>
+              <th>Continente</th>
+              <th>Población</th>
+              <th>PIB 2019</th>
+              <th>PIB 2020</th>
+            </tr>
+          </thead>
+          <tbody id="tablaPaises"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="layout">
+      <form id="formAgregar" class="panel">
+        <h2>Agregar país</h2>
+
+        <input type="text" id="nombre" placeholder="Nombre país" required>
+        <input type="text" id="continente" placeholder="Continente" required>
+        <input type="number" id="poblacion" placeholder="Población" required>
+        <input type="number" id="pib2019" placeholder="PIB 2019" required>
+        <input type="number" id="pib2020" placeholder="PIB 2020" required>
+
+        <button type="submit">Agregar país</button>
+      </form>
+
+      <form id="formEliminar" class="panel">
+        <h2>Eliminar país</h2>
+
+        <input type="text" id="nombreEliminar" placeholder="Nombre país" required>
+
+        <button class="danger" type="submit">Eliminar país</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
