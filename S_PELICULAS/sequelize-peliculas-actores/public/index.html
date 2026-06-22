@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Películas y Actores</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <span>Sequelize · Relación N–N</span>
+      <h1>Películas y Actores</h1>
+      <p>Gestión de relación muchos a muchos mediante tabla intermedia y transacción.</p>
+    </section>
+
+    <section class="actions">
+      <button onclick="listarPeliculas()">Listar películas</button>
+      <button onclick="listarActores()">Listar actores</button>
+    </section>
+
+    <section id="mensaje"></section>
+
+    <section class="layout">
+      <form id="formPelicula" class="panel">
+        <h2>Crear película</h2>
+
+        <label>Título</label>
+        <input type="text" id="titulo" placeholder="Ej: Inception" required>
+
+        <label>Año</label>
+        <input type="number" id="anio" placeholder="Ej: 2010" required>
+
+        <button type="submit">Crear película</button>
+      </form>
+
+      <form id="formActor" class="panel">
+        <h2>Crear actor</h2>
+
+        <label>Nombre</label>
+        <input type="text" id="nombreActor" placeholder="Ej: Leonardo DiCaprio" required>
+
+        <label>Fecha nacimiento</label>
+        <input type="date" id="fechaNacimiento" required>
+
+        <button type="submit">Crear actor</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Asignar actor a película</h2>
+
+      <div class="assign">
+        <select id="peliculaSelect">
+          <option value="">Seleccione película</option>
+        </select>
+
+        <select id="actorSelect">
+          <option value="">Seleccione actor</option>
+        </select>
+
+        <button onclick="asignarActor()">Asignar</button>
+      </div>
+    </section>
+
+    <section class="layout">
+      <section class="panel">
+        <h2>Películas con actores</h2>
+        <div id="listaPeliculas" class="lista"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Actores con películas</h2>
+        <div id="listaActores" class="lista"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
