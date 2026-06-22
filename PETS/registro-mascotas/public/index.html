@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro Civil de Mascotas</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div>
+      <span class="badge">Gobierno de Chile</span>
+      <h1>Registro Civil de Mascotas</h1>
+      <p>Sistema oficial para registrar mascotas y asociarlas al RUT de su dueño.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="panel actions">
+      <button onclick="listarTodas()">Listar todas</button>
+
+      <div class="search">
+        <input type="text" id="buscarNombre" placeholder="Buscar por nombre de mascota">
+        <button onclick="buscarPorNombre()">Buscar nombre</button>
+      </div>
+
+      <div class="search">
+        <input type="text" id="buscarRut" placeholder="Buscar por RUT del dueño">
+        <button onclick="buscarPorRut()">Buscar RUT</button>
+      </div>
+    </section>
+
+    <section class="layout">
+      <form id="formMascota" class="panel">
+        <h2>Registrar mascota</h2>
+
+        <label>Nombre de la mascota</label>
+        <input type="text" id="nombre" placeholder="Ej: Luna" required>
+
+        <label>RUT del dueño</label>
+        <input type="text" id="rut" placeholder="Ej: 12.345.678-9" required>
+
+        <button type="submit">Registrar mascota</button>
+      </form>
+
+      <section class="panel">
+        <h2>Eliminar registro</h2>
+
+        <label>Eliminar por nombre</label>
+        <input type="text" id="eliminarNombre" placeholder="Nombre de mascota">
+        <button class="danger" onclick="eliminarPorNombre()">Eliminar mascota</button>
+
+        <label>Eliminar por RUT</label>
+        <input type="text" id="eliminarRut" placeholder="RUT del dueño">
+        <button class="danger" onclick="eliminarPorRut()">Eliminar mascotas del RUT</button>
+      </section>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <h2>Registros encontrados</h2>
+        <span id="contador">0 registros</span>
+      </div>
+
+      <div id="mensaje"></div>
+      <div id="resultado" class="grid"></div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
