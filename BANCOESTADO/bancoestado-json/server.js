@@ -69,6 +69,16 @@ const server = http.createServer(async (req, res) => {
 
     req.on("end", async () => {
       const data = JSON.parse(body);
+
+      if (
+        data.tipoCuenta !== "rut" &&
+        data.tipoCuenta !== "ahorro"
+      ) {
+        return enviarJSON(res, 400, {
+          error: "Debe crear al menos una cuenta"
+        });
+      }
+
       const clientes = await leerClientes();
 
       const nuevoCliente = {
@@ -184,6 +194,12 @@ const server = http.createServer(async (req, res) => {
       return enviarJSON(res, 404, { error: "Cliente no encontrado" });
     }
 
+    if (cliente.cuentasAhorro.length === 0) {
+      return enviarJSON(res, 400, {
+        error: "El cliente debe mantener al menos una cuenta"
+      });
+    }
+
     cliente.cuentaRut = null;
 
     await guardarClientes(clientes);
@@ -202,6 +218,15 @@ const server = http.createServer(async (req, res) => {
 
     if (!cliente) {
       return enviarJSON(res, 404, { error: "Cliente no encontrado" });
+    }
+
+    if (
+      cliente.cuentasAhorro.length === 1 &&
+      cliente.cuentaRut === null
+    ) {
+      return enviarJSON(res, 400, {
+        error: "El cliente debe mantener al menos una cuenta"
+      });
     }
 
     cliente.cuentasAhorro = cliente.cuentasAhorro.filter(
