@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="panel">
+      <a class="back" href="/">← Volver</a>
+
+      <h1>Productos</h1>
+      <p class="route">GET /api/v1/productos</p>
+
+      <div id="mensaje"></div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody id="tablaProductos"></tbody>
+        </table>
+      </div>
+
+      <div class="detail-box">
+        <input type="number" id="productoId" placeholder="ID para detalle">
+        <button onclick="detalleProducto()">Ver detalle (/id)</button>
+      </div>
+
+      <pre id="detalle"></pre>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
