@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+  padding: 36px 0;
+}
+
+.hero,
+.panel {
+  background: white;
+  padding: 34px;
+  border-radius: 24px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.hero span {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(32px, 6vw, 58px);
+  margin: 10px 0;
+}
+
+h2 {
+  margin-top: 28px;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.menu a,
+button,
+.volver {
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+button:hover,
+.menu a:hover,
+.volver:hover {
+  background: #1d4ed8;
+}
+
+.volver {
+  background: #111827;
+  margin-bottom: 22px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  margin: 8px 0 16px;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+th {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.card,
+.producto-item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 18px;
+  border-radius: 18px;
+}
+
+.producto-item {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.producto-item small {
+  display: block;
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+.mensaje {
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: #ecfdf5;
+  color: #047857;
+  margin-top: 18px;
+}
+
+.mensaje.error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+@media (max-width: 800px) {
+  .menu,
+  .search,
+  .producto-item {
+    grid-template-columns: 1fr;
+  }
+
+  button,
+  .volver {
+    width: 100%;
+  }
+
+  .hero,
+  .panel {
+    padding: 24px;
+  }
+}

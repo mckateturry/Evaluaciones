@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nueva Orden</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <a href="/" class="volver">← Menú principal</a>
+
+    <section class="panel">
+      <h1>Crear nueva orden</h1>
+
+      <label>RUT Cliente</label>
+      <input type="text" id="rutOrden" placeholder="Ej: 11111111-1">
+
+      <button onclick="cargarDirecciones()">Cargar direcciones</button>
+
+      <label>Dirección de despacho</label>
+      <select id="direccionSelect">
+        <option value="">Seleccione dirección</option>
+      </select>
+
+      <h2>Productos</h2>
+      <div id="productosOrden" class="productos-lista"></div>
+
+      <button onclick="crearOrden()">Crear orden</button>
+
+      <div id="mensaje"></div>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

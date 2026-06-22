@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Órdenes por Cliente</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <a href="/" class="volver">← Menú principal</a>
+
+    <section class="panel">
+      <h1>Buscar órdenes por RUT</h1>
+
+      <div class="search">
+        <input type="text" id="rutOrdenes" placeholder="Ej: 11111111-1">
+        <button onclick="buscarOrdenes()">Buscar órdenes</button>
+      </div>
+
+      <div id="mensaje"></div>
+      <section id="listaOrdenes" class="grid"></section>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
