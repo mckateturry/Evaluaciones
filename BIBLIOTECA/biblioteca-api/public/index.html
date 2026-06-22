@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca CRUD REST</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Biblioteca — CRUD REST</p>
+      <h1>Catálogo de libros</h1>
+      <p>Express + File System + catalogo.json</p>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h2>Libros</h2>
+        <p><strong>Endpoints:</strong></p>
+        <code>GET /libros</code>
+        <code>POST /libros</code>
+        <code>PUT /libros/:id</code>
+        <code>DELETE /libros/:id</code>
+        <button onclick="listarLibros()">Ver catálogo</button>
+      </article>
+
+      <article class="card">
+        <h2>Buenas prácticas</h2>
+        <ul>
+          <li>Content-Type: application/json</li>
+          <li>Códigos: 200, 201, 400, 404</li>
+          <li>Lectura y escritura asíncrona</li>
+          <li>Respuestas: { ok, data, mensaje }</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <div>
+          <h2>Libros</h2>
+          <p class="route">GET /libros</p>
+        </div>
+
+        <button onclick="abrirFormulario()">Nuevo libro</button>
+      </div>
+
+      <div id="mensaje"></div>
+
+      <form id="formLibro" class="form hidden">
+        <input type="hidden" id="libroId">
+
+        <input type="text" id="titulo" placeholder="Título" required>
+        <input type="text" id="autor" placeholder="Autor" required>
+        <input type="number" id="anio" placeholder="Año" required>
+
+        <button type="submit">Guardar libro</button>
+      </form>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Año</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaLibros"></tbody>
+        </table>
+      </div>
+
+      <p class="hint">Acciones por fila: editar o eliminar.</p>
+      <p class="hint">Estados esperados: 200 OK · 201 Created · 400 Bad Request · 404 Not Found</p>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
