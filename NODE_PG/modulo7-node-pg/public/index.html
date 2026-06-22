@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Módulo 7 - Node + pg</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <span>Node + PostgreSQL + pg</span>
+      <h1>Panel de consultas</h1>
+      <p>Conexión mediante pool por configuración y connection string.</p>
+    </section>
+
+    <section class="actions">
+      <button onclick="cargarFinanzas()">Ver finanzas personales</button>
+      <button onclick="cargarClientes()">Ver clientes</button>
+    </section>
+
+    <section id="mensaje"></section>
+
+    <section class="panel">
+      <h2>Finanzas personales</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Descripción</th>
+              <th>Tipo</th>
+              <th>Monto</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody id="tablaFinanzas"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Clientes</h2>
+      <div id="listaClientes" class="lista"></div>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
