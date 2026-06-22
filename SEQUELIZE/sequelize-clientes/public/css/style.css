@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
+  padding: 36px 0;
+}
+
+.hero,
+.panel {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.hero {
+  margin-bottom: 24px;
+}
+
+.hero span {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(34px, 6vw, 60px);
+  margin: 10px 0;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 13px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.item {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.item span {
+  display: block;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+.item small {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.mensaje {
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: #ecfdf5;
+  color: #047857;
+  margin-top: 18px;
+}
+
+.mensaje.error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.empty {
+  color: #6b7280;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .hero,
+  .panel {
+    padding: 24px;
+  }
+
+  .item {
+    flex-direction: column;
+  }
+}

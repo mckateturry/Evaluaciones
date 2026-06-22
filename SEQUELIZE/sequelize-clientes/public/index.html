@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clientes Sequelize</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <span>Node + Express + Sequelize</span>
+      <h1>Registro de Clientes</h1>
+      <p>Aplicación full stack conectada a PostgreSQL mediante Sequelize ORM.</p>
+    </section>
+
+    <section class="layout">
+      <form id="formCliente" class="panel">
+        <h2>Agregar cliente</h2>
+
+        <label>Nombre</label>
+        <input type="text" id="nombre" placeholder="Ej: Ana Pérez" required>
+
+        <label>Email</label>
+        <input type="email" id="email" placeholder="Ej: ana@email.com" required>
+
+        <button type="submit">Agregar cliente</button>
+      </form>
+
+      <section class="panel">
+        <div class="section-title">
+          <h2>Listado de clientes</h2>
+          <button onclick="listarClientes()">Listar clientes</button>
+        </div>
+
+        <div id="mensaje"></div>
+        <ul id="lista" class="lista"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
