@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto Talento</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Foto Talento — Subida de Imágenes</h1>
+      <p>Express + Multer · Límite 5MB · Tipos: JPG, PNG y GIF</p>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h2>Endpoints</h2>
+        <ul>
+          <li><strong>GET /</strong> Página principal</li>
+          <li><strong>POST /upload</strong> Subir imagen</li>
+          <li><strong>GET /galeria</strong> Listar imágenes</li>
+        </ul>
+
+        <a href="/subir.html" class="btn">Ir a subir</a>
+      </article>
+
+      <article class="card">
+        <h2>Validaciones</h2>
+        <ul>
+          <li>Tipo MIME: image/jpeg, image/png, image/gif</li>
+          <li>Tamaño máximo: 5 MB</li>
+          <li>Nombre único: Date.now() + extensión</li>
+          <li>Respuestas: 201, 400 y 415</li>
+        </ul>
+
+        <a href="/galeria.html" class="btn secondary">Ver galería</a>
+      </article>
+    </section>
+
+    <footer>
+      <p>Tip: usar app.use(express.static("public")) y carpeta /uploads para archivos.</p>
+    </footer>
+  </main>
+
+</body>
+</html>

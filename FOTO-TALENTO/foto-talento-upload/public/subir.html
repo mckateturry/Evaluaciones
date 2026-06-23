@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subir imagen</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <main class="container">
+    <section class="hero">
+      <a href="/" class="back">← Volver</a>
+      <h1>Subir imagen</h1>
+      <p>POST /upload · enctype=multipart/form-data</p>
+    </section>
+
+    <section class="upload-layout">
+      <form id="formUpload" class="card">
+        <label for="inputFoto">
+          Selecciona una imagen JPG, JPEG, PNG o GIF. Máx. 5MB
+        </label>
+
+        <input 
+          type="file" 
+          id="inputFoto" 
+          name="foto" 
+          accept="image/jpeg,image/png,image/gif" 
+          required
+        >
+
+        <button type="submit" class="btn">Subir</button>
+
+        <div id="feedback" class="message">
+          Mensaje de estado aparecerá aquí.
+        </div>
+      </form>
+
+      <section class="card preview-card">
+        <h2>Vista previa</h2>
+
+        <div class="preview">
+          <img id="previewImg" src="" alt="">
+          <span id="previewText">600 × 400</span>
+        </div>
+      </section>
+    </section>
+
+    <footer>
+      <p>Validaciones reales en backend con Multer: fileFilter + limits.fileSize.</p>
+    </footer>
+  </main>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
